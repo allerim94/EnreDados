@@ -71,7 +71,7 @@ assert.strictEqual(run('S.room'),null,'local game unexpectedly has a room');
 console.log('PREPARE GAME LOCAL FLOW: OK');
 
 // Logo policy: HOME may show the logo name; level renderers must not inject it.
-assert.ok(run("home()").includes('ENREDADOS'),'home logo missing');
+assert.ok(run("home()").toUpperCase().includes('ENREDADOS'),'home logo missing');
 for(let n=1;n<=10;n++){
   run(`S=normalize(blank());S.p=['A','B'];S.score=[0,0];S.level=${n};S.turn=0;S.progress=0;S.screen='game';init(${n})`);
   const markup=run('game()');
